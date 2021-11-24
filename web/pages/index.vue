@@ -358,7 +358,7 @@
 
 </template>
 
-<script>
+<script lang="ts">
 import { validationMixin } from 'vuelidate';
 import {
   minLength,

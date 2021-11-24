@@ -7,7 +7,8 @@
     "sourceMap": true,
     "watch": true,
     "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "types": ["@types/node", "@nuxt/vue-app", "@nuxtjs/vuetify"]
   },
   "exclude": ["node_modules"]
 }

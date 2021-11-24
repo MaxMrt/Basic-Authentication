@@ -5,8 +5,8 @@ v-app(:style="{background: $vuetify.theme.themes[theme].cardBackground}")
     nuxt
 </template>
 
-<script>
-import Snackbar from '../components/system/Snackbar.vue'
+<script lang="ts">
+import Snackbar from '../components/system/Snackbar.vue';
 export default {
   auth: false,
   components: {
@@ -14,18 +14,18 @@ export default {
   },
   computed: {
     theme() {
-      return this.$vuetify.theme.dark ? 'dark' : 'light'
+      return this.$vuetify.theme.dark ? 'dark' : 'light';
     },
   },
   data() {
-    return {}
+    return {};
   },
 
   beforeCreate() {
-    this.$vuetify.theme.dark = this.$store.state.app.darkMode
+    this.$vuetify.theme.dark = this.$store.state.app.darkMode;
   },
   methods: {},
-}
+};
 </script>
 
 <style lang="scss" scoped></style>

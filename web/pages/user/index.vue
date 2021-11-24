@@ -6,7 +6,7 @@
         v-btn(color="primary" @click="testUser").mr-3 User
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'userIndex',
   middleware: 'auth',

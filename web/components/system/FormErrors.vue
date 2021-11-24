@@ -5,7 +5,7 @@
       :hasErrors="hasErrors"
     )
 </template>
-<script>
+<script lang="ts">
 import { singleErrorExtractorMixin } from 'vuelidate-error-extractor';
 export default {
   name: 'FormErrors',
