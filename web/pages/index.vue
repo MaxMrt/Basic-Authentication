@@ -419,8 +419,8 @@ export default {
       // User-Input
       // #################################
       loginInput: {
-        email: 'max.martens@aol.de',
-        password: '12345678',
+        email: null,
+        password: null,
       },
       defaultLogin: {
         email: null,

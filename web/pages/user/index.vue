@@ -17,6 +17,10 @@ export default {
     async testUser() {
       try {
         await this.$axios.$get('/test/credentials/user');
+        this.$store.commit('feedback/setMessage', {
+          message: 'Anfrage erfolgreich',
+          color: 'success',
+        });
       } catch (error) {
         if (error.response.status === 403) {
           this.$store.commit('feedback/setMessage', {

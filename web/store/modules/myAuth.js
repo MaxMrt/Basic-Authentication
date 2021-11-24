@@ -49,8 +49,6 @@ const actions = {
         password: password,
       })
       .then((response) => {
-        console.log('IN VUEX');
-        console.log(response);
         commit('setToken', response.token);
         commit('setUser', response.user);
         commit('setScope', response.user.scope);
@@ -78,7 +76,7 @@ const actions = {
 };
 
 export default {
-  name: 'auth',
+  name: 'myAuth',
   namespaced: true,
   state,
   mutations,
