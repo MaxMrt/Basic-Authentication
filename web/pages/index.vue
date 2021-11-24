@@ -427,10 +427,10 @@ export default {
         password: null,
       },
       registerInput: {
-        firstName: null,
-        lastName: null,
-        email: null,
-        password: null,
+        firstName: 'Manuel',
+        lastName: 'Neuer',
+        email: 'manuel.neuer@test.de',
+        password: '12345678',
       },
       defaultRegister: {
         firstName: null,
@@ -475,6 +475,50 @@ export default {
         return;
       }
       this.loadingButton = true;
+
+      // Create User
+      try {
+        await this.$axios.$post('/auth/register', this.registerInput);
+      } catch (error) {
+        if (error.response.status === 409) {
+          this.$store.commit('feedback/setMessage', {
+            message: 'E-Mail Adresse wird bereits verwendet',
+            color: 'warning',
+          });
+          this.loadingButton = false;
+          return;
+        } else {
+          this.$store.commit('feedback/setMessage', {
+            message: 'Ihre Anfrage konnte nicht bearbeitet werden',
+            color: 'error',
+          });
+          this.loadingButton = false;
+          return;
+        }
+      }
+
+      try {
+        await this.$store.dispatch('myAuth/login', {
+          email: this.registerInput.email,
+          password: this.registerInput.password,
+        });
+        this.$store.commit('feedback/setMessage', {
+          message: 'Erfolgreich eingeloggt',
+          color: 'success',
+        });
+      } catch (error) {
+        if (error.response.status === 409) {
+          this.$store.commit('feedback/setMessage', {
+            message: 'Keine Übereinstimmung aus Passwort und E-Mail gefunden',
+            color: 'warning',
+          });
+        } else {
+          this.$store.commit('feedback/setMessage', {
+            message: 'Ihre Anfrage konnte nicht bearbeitet werden',
+            color: 'error',
+          });
+        }
+      }
       this.loadingButton = false;
     },
     async login() {
@@ -483,11 +527,8 @@ export default {
         return;
       }
       this.loadingButton = true;
-      console.log('__');
-      console.log(this.loginInput.email);
-      console.log(this.loginInput.password);
       try {
-        await this.$store.dispatch('auth/login', {
+        await this.$store.dispatch('myAuth/login', {
           email: this.loginInput.email,
           password: this.loginInput.password,
         });

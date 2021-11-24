@@ -44,7 +44,6 @@ export const insertUserOne = async (
       insertedUser = await userCollection.insertOne(user, {
         session,
       });
-      console.log('Created User');
       insertedUser = insertedUser.ops[0];
 
       // Add meta information

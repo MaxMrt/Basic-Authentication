@@ -1,7 +1,7 @@
 {
-  "name": "vue-playground-server",
+  "name": "basic-authentication-server",
   "version": "1.0.0",
-  "description": "Server container for vue-playground",
+  "description": "Server container for basic-authentication",
   "private": true,
   "scripts": {
     "dev": "nodemon index.ts"
