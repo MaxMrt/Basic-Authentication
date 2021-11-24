@@ -487,7 +487,7 @@ export default {
       console.log(this.loginInput.email);
       console.log(this.loginInput.password);
       try {
-        await this.$store.dispatch('myAuth/login', {
+        await this.$store.dispatch('auth/login', {
           email: this.loginInput.email,
           password: this.loginInput.password,
         });

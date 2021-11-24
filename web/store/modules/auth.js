@@ -78,7 +78,7 @@ const actions = {
 };
 
 export default {
-  name: 'myAuth',
+  name: 'auth',
   namespaced: true,
   state,
   mutations,
