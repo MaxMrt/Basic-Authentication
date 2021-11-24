@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - youtube-dashboard',
-    title: 'youtube-dashboard',
+    titleTemplate: '%s - Basic-Auth',
+    title: 'Basic-Auth',
     htmlAttrs: {
       lang: 'en',
     },
@@ -47,16 +47,16 @@ export default {
   /*
    ** axios module configuration
    ** See https://github.com/nuxt-community/axios-module#options
+   */
 
   axios: {
     host: process.env.SERVER_HOST || 'localhost',
-    port: process.env.SERVER_PORT || 3000,
+    port: process.env.SERVER_PORT || 3700,
     https: false,
     prefix: '/api',
     withCredentials: true,
     credentials: true,
   },
-  */
 
   /*
    ** i18n module configuration

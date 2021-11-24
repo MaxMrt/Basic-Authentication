@@ -188,83 +188,84 @@
               v-container(
                 fill-height
                 fluid)
-                v-card(
-                  flat
-                  color="transparent"
-                  tile)
-                  v-row(justify="center")
-                    v-col(cols="8")
-                      .text-h5.mb-1 {{$t('register.header')}}
-                      .text-body-2.lightenText--text {{$t('register.text')}}
-                    v-col(cols="8")
-                      .text-caption.my-2 {{$t('register.firstName')}}
-                      FormErrors(
-                        :validator="$v.registerInput.firstName"
-                        :label="$t('register.firstName')")
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="Lando"
-                          v-model='registerInput.firstName'
-                          @input="$v.registerInput.firstName.$touch()"
-                          @blur="$v.registerInput.firstName.$touch()"
-                        )
-                      .text-caption.my-2 {{$t('register.lastName')}}
-                      FormErrors(
-                        :validator="$v.registerInput.lastName"
-                        :label="$t('register.lastName')")
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="Norris"
-                          v-model='registerInput.lastName'
-                          @input="$v.registerInput.lastName.$touch()"
-                          @blur="$v.registerInput.lastName.$touch()"
-                        )
-                      .text-caption.my-2 {{$t('register.email')}}
-                      FormErrors(
-                        :validator="$v.registerInput.email"
-                        :label="$t('register.email')")
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="lando.norris@mail.com"
-                          v-model='registerInput.email'
-                          @input="$v.registerInput.email.$touch()"
-                          @blur="$v.registerInput.email.$touch()"
-                        )
-                      .text-caption.my-2 {{$t('register.password')}}
-                      FormErrors(
-                        :validator="$v.registerInput.password"
-                        :label="$t('register.password')")          
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="******"
-                          :type="showPw ? 'text' : 'password'"
-                          :append-icon="showPw ? 'mdi-eye' : 'mdi-eye-off'"
-                          @click:append="showPw = !showPw"
-                          v-model='registerInput.password'
-                          @input="$v.registerInput.password.$touch()"
-                          @blur="$v.registerInput.password.$touch()"
-                        )
-                      v-btn(
-                        color="primary"
-                        width="100%"
-                        @click="register"
-                        :loading="loadingButton"
-                        :disabled="loadingButton").mt-5 {{ $t('register.button') }}
-                      v-divider.my-5
-                      v-btn(
-                        color="primary"
-                        outlined
-                        width="100%"
-                        text
-                        @click="step--")  {{ $t('login.button') }}
+                v-row(justify="center")
+                  v-card(
+                    flat
+                    color="transparent"
+                    tile)
+                    v-row(justify="center")
+                      v-col(cols="8")
+                        .text-h5.mb-1 {{$t('register.header')}}
+                        .text-body-2.lightenText--text {{$t('register.text')}}
+                      v-col(cols="8")
+                        .text-caption.my-2 {{$t('register.firstName')}}
+                        FormErrors(
+                          :validator="$v.registerInput.firstName"
+                          :label="$t('register.firstName')")
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="Lando"
+                            v-model='registerInput.firstName'
+                            @input="$v.registerInput.firstName.$touch()"
+                            @blur="$v.registerInput.firstName.$touch()"
+                          )
+                        .text-caption.my-2 {{$t('register.lastName')}}
+                        FormErrors(
+                          :validator="$v.registerInput.lastName"
+                          :label="$t('register.lastName')")
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="Norris"
+                            v-model='registerInput.lastName'
+                            @input="$v.registerInput.lastName.$touch()"
+                            @blur="$v.registerInput.lastName.$touch()"
+                          )
+                        .text-caption.my-2 {{$t('register.email')}}
+                        FormErrors(
+                          :validator="$v.registerInput.email"
+                          :label="$t('register.email')")
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="lando.norris@mail.com"
+                            v-model='registerInput.email'
+                            @input="$v.registerInput.email.$touch()"
+                            @blur="$v.registerInput.email.$touch()"
+                          )
+                        .text-caption.my-2 {{$t('register.password')}}
+                        FormErrors(
+                          :validator="$v.registerInput.password"
+                          :label="$t('register.password')")          
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="******"
+                            :type="showPw ? 'text' : 'password'"
+                            :append-icon="showPw ? 'mdi-eye' : 'mdi-eye-off'"
+                            @click:append="showPw = !showPw"
+                            v-model='registerInput.password'
+                            @input="$v.registerInput.password.$touch()"
+                            @blur="$v.registerInput.password.$touch()"
+                          )
+                        v-btn(
+                          color="primary"
+                          width="100%"
+                          @click="register"
+                          :loading="loadingButton"
+                          :disabled="loadingButton").mt-5 {{ $t('register.button') }}
+                        v-divider.my-5
+                        v-btn(
+                          color="primary"
+                          outlined
+                          width="100%"
+                          text
+                          @click="step--")  {{ $t('login.button') }}
                     
           v-col(
             cols="12"
@@ -275,83 +276,84 @@
               v-container(
                 fill-height
                 fluid).lightbox
-                v-card(
-                  flat
-                  color="transparent"
-                  tile)
-                  v-row(justify="center")
-                    v-col(cols="8")
-                      .text-h5.white--text.mb-1 {{$t('register.header')}}
-                      .text-body-2.white--text {{$t('register.text')}}
-                    v-col(cols="8")
-                      .text-caption.white--text.my-2 {{$t('register.firstName')}}
-                      FormErrors(
-                        :validator="$v.registerInput.firstName"
-                        :label="$t('register.firstName')")
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="Lando"
-                          v-model='registerInput.firstName'
-                          @input="$v.registerInput.firstName.$touch()"
-                          @blur="$v.registerInput.firstName.$touch()"
-                        )
-                      .text-caption.white--text.my-2 {{$t('register.lastName')}}
-                      FormErrors(
-                        :validator="$v.registerInput.lastName"
-                        :label="$t('register.lastName')")
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="Norris"
-                          v-model='registerInput.lastName'
-                          @input="$v.registerInput.lastName.$touch()"
-                          @blur="$v.registerInput.lastName.$touch()"
-                        )
-                      .text-caption.white--text.my-2 {{$t('register.email')}}
-                      FormErrors(
-                        :validator="$v.registerInput.email"
-                        :label="$t('register.email')")
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="lando.norris@mail.com"
-                          v-model='registerInput.email'
-                          @input="$v.registerInput.email.$touch()"
-                          @blur="$v.registerInput.email.$touch()"
-                        )
-                      .text-caption.white--text.my-2 {{$t('register.password')}}
-                      FormErrors(
-                        :validator="$v.registerInput.password"
-                        :label="$t('register.password')")          
-                        v-text-field(
-                          slot-scope="{ attrs }"
-                          v-bind="attrs"
-                          solo
-                          placeholder="******"
-                          :type="showPw ? 'text' : 'password'"
-                          :append-icon="showPw ? 'mdi-eye' : 'mdi-eye-off'"
-                          @click:append="showPw = !showPw"
-                          v-model='registerInput.password'
-                          @input="$v.registerInput.password.$touch()"
-                          @blur="$v.registerInput.password.$touch()"
-                        )
-                      v-btn(
-                        color="primary"
-                        width="100%"
-                        @click="register"
-                        :loading="loadingButton"
-                        :disabled="loadingButton").mt-5 {{ $t('register.button') }}
-                      v-divider.my-5
-                      v-btn(
-                        color="primary"
-                        outlined
-                        width="100%"
-                        text
-                        @click="step--")  {{ $t('login.button') }}
+                v-row(justify="center")
+                  v-card(
+                    flat
+                    color="transparent"
+                    tile)
+                    v-row(justify="center")
+                      v-col(cols="8")
+                        .text-h5.white--text.mb-1 {{$t('register.header')}}
+                        .text-body-2.white--text {{$t('register.text')}}
+                      v-col(cols="8")
+                        .text-caption.white--text.my-2 {{$t('register.firstName')}}
+                        FormErrors(
+                          :validator="$v.registerInput.firstName"
+                          :label="$t('register.firstName')")
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="Lando"
+                            v-model='registerInput.firstName'
+                            @input="$v.registerInput.firstName.$touch()"
+                            @blur="$v.registerInput.firstName.$touch()"
+                          )
+                        .text-caption.white--text.my-2 {{$t('register.lastName')}}
+                        FormErrors(
+                          :validator="$v.registerInput.lastName"
+                          :label="$t('register.lastName')")
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="Norris"
+                            v-model='registerInput.lastName'
+                            @input="$v.registerInput.lastName.$touch()"
+                            @blur="$v.registerInput.lastName.$touch()"
+                          )
+                        .text-caption.white--text.my-2 {{$t('register.email')}}
+                        FormErrors(
+                          :validator="$v.registerInput.email"
+                          :label="$t('register.email')")
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="lando.norris@mail.com"
+                            v-model='registerInput.email'
+                            @input="$v.registerInput.email.$touch()"
+                            @blur="$v.registerInput.email.$touch()"
+                          )
+                        .text-caption.white--text.my-2 {{$t('register.password')}}
+                        FormErrors(
+                          :validator="$v.registerInput.password"
+                          :label="$t('register.password')")          
+                          v-text-field(
+                            slot-scope="{ attrs }"
+                            v-bind="attrs"
+                            solo
+                            placeholder="******"
+                            :type="showPw ? 'text' : 'password'"
+                            :append-icon="showPw ? 'mdi-eye' : 'mdi-eye-off'"
+                            @click:append="showPw = !showPw"
+                            v-model='registerInput.password'
+                            @input="$v.registerInput.password.$touch()"
+                            @blur="$v.registerInput.password.$touch()"
+                          )
+                        v-btn(
+                          color="primary"
+                          width="100%"
+                          @click="register"
+                          :loading="loadingButton"
+                          :disabled="loadingButton").mt-5 {{ $t('register.button') }}
+                        v-divider.my-5
+                        v-btn(
+                          color="primary"
+                          outlined
+                          width="100%"
+                          text
+                          @click="step--")  {{ $t('login.button') }}
                     
 
 </template>
@@ -366,7 +368,7 @@ import {
 } from 'vuelidate/lib/validators';
 import FormErrors from '../components/system/FormErrors.vue';
 export default {
-  name: 'auth',
+  name: 'login',
   components: {
     FormErrors,
   },
@@ -417,8 +419,8 @@ export default {
       // User-Input
       // #################################
       loginInput: {
-        email: null,
-        password: null,
+        email: 'max.martens@aol.de',
+        password: '12345678',
       },
       defaultLogin: {
         email: null,
@@ -481,6 +483,32 @@ export default {
         return;
       }
       this.loadingButton = true;
+      console.log('__');
+      console.log(this.loginInput.email);
+      console.log(this.loginInput.password);
+      try {
+        await this.$store.dispatch('myAuth/login', {
+          email: this.loginInput.email,
+          password: this.loginInput.password,
+        });
+        this.$store.commit('feedback/setMessage', {
+          message: 'Erfolgreich eingeloggt',
+          color: 'success',
+        });
+      } catch (error) {
+        if (error.response.status === 409) {
+          this.$store.commit('feedback/setMessage', {
+            message: 'Keine Übereinstimmung aus Passwort und E-Mail gefunden',
+            color: 'warning',
+          });
+        } else {
+          this.$store.commit('feedback/setMessage', {
+            message: 'Ihre Anfrage konnte nicht bearbeitet werden',
+            color: 'error',
+          });
+        }
+      }
+      this.close();
       this.loadingButton = false;
     },
   },
